@@ -1,14 +1,40 @@
-sec = int(input('Введите кол-во секунд = '))
+cubes = [x**3 for x in range (100) if  x%2 != 0 ]
+print(cubes)
+some_of_numbs = 0
+some_of_numbs_list=[]
 
-if sec >= 60 :
-  minutes = sec // 60
-  print(minutes, 'мин', sec % 60, 'сек')
-if sec >= 3600 :
-  hours = sec // 3600
-  print(hours, 'часов', minutes % 60, 'мин', sec % 60, 'сек')
-if sec >= 86400 :
-  days = sec // 86400
-  print(days, 'дней', hours % 3600, 'часов', minutes % 60, 'мин', sec % 60, 'сек') 
-    
+for i in range(len(cubes)):
+  my_str = str(cubes[i])
+  my_list = list(my_str)   
+for i in range(len(my_list)):
+  my_list[i] = int(my_list[i])    
+for i in range(len(my_list)):
+  some_of_numbs = some_of_numbs + my_list[i]
+if some_of_numbs % 7 == 0:
+        print(some_of_numbs)
+some_of_numbs_list.append(some_of_numbs)
+print('Числа, которые делятся на 7 - ', some_of_numbs_list)
 
+cubes = [(x**3)+17 for x in range(100) if x%2 == 0]
+print(cubes)
+some_of_numbs = 0
+some_of_numbs_list_with_numbers =[]
 
+for i in range(len(cubes)):
+    my_str = str(cubes[i])
+    my_list = list(my_str)
+    for i in range(len(my_list)):
+        my_list[i] = int(my_list[i])
+
+for i in range(len(my_list)):
+        some_of_numbs = some_of_numbs + my_list[i]
+
+if some_of_numbs % 7 == 0:
+        print(some_of_numbs)
+        some_of_numbs_list_with_numbers.append(some_of_numbs)
+
+if some_of_numbs % 7 == 0:
+        print(some_of_numbs)
+        some_of_numbs_list_with_numbers.append(some_of_numbs)
+
+print('Числа, которые делятся на 7 - ',some_of_numbs_list_with_numbers)
