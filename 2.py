@@ -1,11 +1,22 @@
-sec = int(input('Введите кол-во секунд = '))
+input_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
+length_of_list:int = len(input_list)
+store_id = id(input_list)
 
-if sec >= 60:
-    minutes = sec // 60
-    print(minutes, 'мин', sec % 60, 'сек')
-if sec >= 3600:
-    hours = sec // 3600
-    print(hours, 'часов', minutes % 60, 'мин', sec % 60, 'сек')
-if sec >= 86400:
-    days = sec // 86400
-    print(days, 'дней', hours % 3600, 'часов', minutes % 60,'мин', sec % 60,'сек')
+print(f"id before {store_id}")
+
+for _ in range(length_of_list): 
+  
+  elem = input_list.pop(0)
+
+  if elem.isdigit() and elem.isalnum():
+    input_list.append(f'"{int(elem):02d}"')
+         
+  elif elem[0] == "+" and elem[1].isdigit():
+    input_list.append(f'"+{int(elem):02d}"')
+         
+  else:
+    input_list.append(elem)
+
+print(' '.join(input_list))
+
+print(f"id after {id(input_list)}")
